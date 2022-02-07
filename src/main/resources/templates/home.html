@@ -5,7 +5,10 @@
     <title>Title</title>
 </head>
 <body>
-<h1 th:inline="text">Hello [[${#httpServletRequest.remoteUser}]]</h1>
+<h1 >Hello</h1>
+<p th:text="${session.user.name}"></p>
+<p th:text="${session.user.email}"></p>
+<img th:src="${session.user.picture}" alt="">
 <form action="" th:action="@{/logout}" method="post">
     <input type="submit" value="Sign Out">
 </form>

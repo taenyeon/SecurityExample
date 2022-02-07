@@ -4,7 +4,13 @@
     <insert id="joinMember">
         insert into MEMBEREX(member_id, member_pwd) values (#{memberId},#{memberPwd})
     </insert>
+    <insert id="saveOAuthUser">
+        insert into OAUTH_USER(email, name, picture, role) values (#{email},#{name},#{picture},#{role})
+    </insert>
     <select id="findByMemberId" resultType="com.example.SecurityExample.domain.Member">
         select * from MEMBEREX where MEMBER_ID=#{memberId}
+    </select>
+    <select id="findByEmail" resultType="com.example.SecurityExample.domain.OAuthUser">
+        select * from OAUTH_USER where EMAIL = #{email}
     </select>
 </mapper>
